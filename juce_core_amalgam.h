@@ -692,8 +692,10 @@ extern JUCE_API bool JUCE_CALLTYPE juce_isRunningUnderDebugger();
 #define __JUCE_MEMORY_JUCEHEADER__
 
 #if JUCE_MINGW
+#ifndef alloca
  /** This allocator is not defined in mingw gcc. */
  #define alloca              __builtin_alloca
+#endif
 #endif
 
 /** Fills a block of memory with zeros. */
